@@ -11,9 +11,6 @@ public class UDPclient {
         int portNumber = Integer.parseInt(args[1]);
 
         try {
-            if (args.length > 0)
-                serverHostname = args[0];
-
             BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
 
             DatagramSocket clientSocket = new DatagramSocket();

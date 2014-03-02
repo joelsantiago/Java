@@ -1,10 +1,11 @@
 import java.io.*;
 import java.net.*;
 
+
 /**
- *  CLI arguments: java TCPclient HostName PortNumber
+ * CLI arguments: java TCPmulticlient HostName PortNumber
  */
-public class TCPclient {
+public class TCPmulticlient {
     public static void main(String[] args) throws IOException {
 
         String serverHostname = args[0];
@@ -31,11 +32,13 @@ public class TCPclient {
         BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
         String userInput;
 
-        System.out.print("input: ");
+        System.out.println("Type Message (\"Bye\" to quit)");
         while ((userInput = stdIn.readLine()) != null) {
             out.println(userInput);
+            if (userInput.equals("Bye"))
+                break;
+
             System.out.println("echo: " + in.readLine());
-            System.out.print("input: ");
         }
 
         out.close();
