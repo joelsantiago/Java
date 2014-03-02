@@ -1,11 +1,16 @@
 import java.io.*;
 import java.net.*;
 
-class UDPserver {
+/**
+ *  CLI arguments: java UDPserver PortNumber
+ */
+public class UDPserver {
     public static void main(String args[]) throws Exception {
 
+        int portNumber = Integer.parseInt(args[0]);
+
         try {
-            DatagramSocket serverSocket = new DatagramSocket(50500);
+            DatagramSocket serverSocket = new DatagramSocket(portNumber);
 
             byte[] receiveData = new byte[1024];
             byte[] sendData = new byte[1024];
@@ -38,7 +43,7 @@ class UDPserver {
                 serverSocket.send(sendPacket);
             }
         } catch (SocketException ex) {
-            System.out.println("UDP Port 50500 is occupied");
+            System.out.println("UDP Port " + portNumber + " is occupied");
             System.exit(1);
         }
     }

@@ -1,12 +1,16 @@
 import java.net.*;
 import java.io.*;
 
+/**
+ *  CLI arguments: java TCPserver PortNumber
+ */
 public class TCPserver {
     public static void main(String[] args) throws IOException {
+        int portNumber = Integer.parseInt(args[0]);
         ServerSocket serverSocket = null;
 
         try {
-            serverSocket = new ServerSocket(50500);
+            serverSocket = new ServerSocket(portNumber);
         } catch (IOException e) {
             System.err.println("Could not listen on port: 50500");
             System.exit(1);

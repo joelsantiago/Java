@@ -1,12 +1,16 @@
 import java.io.*;
 import java.net.*;
 
-class UDPclient {
+/**
+ *  CLI arguments: java UDPclient HostName PortNumber
+ */
+public class UDPclient {
     public static void main(String args[]) throws Exception {
 
-        try {
-            String serverHostname = new String("joelsantiago.co");
+        String serverHostname = args[0];
+        int portNumber = Integer.parseInt(args[1]);
 
+        try {
             if (args.length > 0)
                 serverHostname = args[0];
 
@@ -15,7 +19,7 @@ class UDPclient {
             DatagramSocket clientSocket = new DatagramSocket();
 
             InetAddress IPAddress = InetAddress.getByName(serverHostname);
-            System.out.println("Attempting to connect to " + IPAddress + ") via UDP port 50500");
+            System.out.println("Attempting to connect to " + IPAddress + ") via UDP port " + portNumber);
 
             byte[] sendData = new byte[1024];
             byte[] receiveData = new byte[1024];
@@ -25,7 +29,7 @@ class UDPclient {
             sendData = sentence.getBytes();
 
             System.out.println("Sending data to " + sendData.length + " bytes to server.");
-            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 50500);
+            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
 
             clientSocket.send(sendPacket);
 

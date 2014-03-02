@@ -1,21 +1,25 @@
 import java.io.*;
 import java.net.*;
 
+/**
+ *  CLI arguments: java TCPclient HostName PortNumber
+ */
 public class TCPclient {
     public static void main(String[] args) throws IOException {
 
-        String serverHostname = new String("joelsantiago.co");
+        String serverHostname = args[0];
+        int portNumber = Integer.parseInt(args[1]);
 
         if (args.length > 0)
             serverHostname = args[0];
-        System.out.println("Attempting to connect to host " + serverHostname + " on port 50500");
+        System.out.println("Attempting to connect to host " + serverHostname + " on port " + portNumber);
 
         Socket clientSocket = null;
         PrintWriter out = null;
         BufferedReader in = null;
 
         try {
-            clientSocket = new Socket(serverHostname, 50500);
+            clientSocket = new Socket(serverHostname, portNumber);
             out = new PrintWriter(clientSocket.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         } catch (UnknownHostException e) {
