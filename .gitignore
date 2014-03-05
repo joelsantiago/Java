@@ -33,3 +33,9 @@
 .metadata
 ehthumbs.db
 Thumbs.db
+
+# Application generated files #
+###############################
+*.form
+*.iml
+.idea
