@@ -22,7 +22,7 @@ public class Chat_Client {
 
     BufferedReader in;
     PrintWriter out;
-    JFrame frame = new JFrame("Comunicater");
+    JFrame frame = new JFrame("Communicator");
     JTextField textField = new JTextField(40);
     JTextArea messageArea = new JTextArea(8, 40);
 
@@ -46,7 +46,7 @@ public class Chat_Client {
         return JOptionPane.showInputDialog(
                 frame,
                 "Enter IP Address of the Server:",
-                "Welcome to the Communicater",
+                "Welcome to the Communicator",
                 JOptionPane.QUESTION_MESSAGE
         );
     }
