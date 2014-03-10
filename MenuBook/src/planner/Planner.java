@@ -4,22 +4,24 @@ import javax.swing.*;
 import planner.gui.*;
 
 /**
- * @author Edward Billard
- *
- * This runs PlannerApplet as an application, instead of from an html file
- *
+ * Created with IntelliJ IDEA
+ * User: joelsantiago
+ * Date: 3/10/14
+ * Time: 10:50 AM
  */
-public class Planner { 
-  public static void main(String args[]) {
-    JApplet applet = new PlannerApplet();                  // create the applet
-    JFrame frame = new JFrame("Menu Planner");             // create a frame
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // frame closes File->Exit
-    frame.getContentPane().add(applet);                    // add applet to fram
-    frame.setSize(750,900);                                // make it large enough
-    applet.init();                                         // similar to constructor
-    applet.start();                                        // run the applet
-    frame.setVisible(true);                                // make it visible
-  }
+public class Planner {
+
+    public static void main(String args[]) {
+
+        JApplet applet = new PlannerApplet();                   // create the applet
+        JFrame frame = new JFrame("Menu Planner");              // create a frame
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // frame closes File->Exit
+        frame.getContentPane().add(applet);                     // add applet to fram
+        frame.setSize(750,900);                                 // make it large enough
+        applet.init();                                          // similar to constructor
+        applet.start();                                         // run the applet
+        frame.setVisible(true);                                 // make it visible
+    }
 }
 
 /*  OUTPUT AFTER EX.7D IMPLEMENTAION WITH VALIDATION CHECK AT END
@@ -60,7 +62,7 @@ Ingredients:
 Steps:
 1. S1
 
-Menu Book: 
+Menu Book:
 Menu: Birthday Dinner (DINNER)
 
 Recipe: Hamburgers
@@ -89,12 +91,12 @@ Total Calories: 1150
  */
 
 // Calorie check
-// Pre validation test: 
+// Pre validation test:
 //      Total Calories: 950
 //
 // Post validation test:
 //      Total Calories: 1150
-// 
+//
 // Ingredients added:
 //      4 slices of American cheese
 //          Calories per slice: 50
@@ -104,4 +106,3 @@ Total Calories: 1150
 // Total Calories:
 //      Before Test: 950
 //      After Test: 950 + 200 = 1150
-

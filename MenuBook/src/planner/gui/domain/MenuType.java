@@ -1,14 +1,14 @@
 package planner.gui.domain;
 
-/** MenuType class currently unused
- * 
- * 	enum for the type of FoodMenu currently unused
- * 
- * 	@author Joel Santiago
- * 
+/**
+ * Created with IntelliJ IDEA
+ * User: joelsantiago
+ * Date: 3/10/14
+ * Time: 10:53 AM
  */
-public enum MenuType{
-	BREAKFAST,
-	LUNCH,
-	DINNER
+public enum MenuType {
+
+    BREAKFAST,
+    LUNCH,
+    DINNER
 }
