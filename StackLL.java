@@ -1,14 +1,14 @@
-// Stack in Java Language
+// Stack using a linked list
 
-public class Stack {
-    private Node first;      
+public class StackLL {
+    private Node first;
 
     private class Node {
         private Object o;
         private Node next;
     }
 
-    public Stack() {
+    public StackLL() {
         first = null;
     }
 
@@ -25,9 +25,9 @@ public class Stack {
 
     // delete and return the most recently added element
     public Object pop() {
-        Object o = first.o;    
-        first = first.next;            
-        return o;                   
+        Object o = first.o;
+        first = first.next;
+        return o;
     }
 
     public static void main(String[] args) {
@@ -41,7 +41,7 @@ public class Stack {
     }
 }
 
-/*	Output from Stack.java - Similar to stack1.cpp
+/*	Output from StackLL.java
 *
 *	Name 3 30
 *	Name 2 20

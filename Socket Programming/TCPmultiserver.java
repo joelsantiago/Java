@@ -2,7 +2,7 @@ import java.net.*;
 import java.io.*;
 
 /**
- *  CLI arguments: java TCPmultiserver HostName PortNumber
+ *  CLI arguments: java TCPmultiserver PortNumber
  */
 public class TCPmultiserver extends Thread {
     protected Socket clientSocket;

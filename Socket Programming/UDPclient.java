@@ -17,36 +17,44 @@ public class UDPclient {
 
             InetAddress IPAddress = InetAddress.getByName(serverHostname);
             System.out.println("Attempting to connect to " + IPAddress + ") via UDP port " + portNumber);
+            System.out.println("Enter \"Quit\" to exit program");
 
-            byte[] sendData = new byte[1024];
-            byte[] receiveData = new byte[1024];
+            while (true) {
+                byte[] sendData = new byte[1024];
+                byte[] receiveData = new byte[1024];
 
-            System.out.print("Enter Message: ");
-            String sentence = inFromUser.readLine();
-            sendData = sentence.getBytes();
+                System.out.print("Enter Message: ");
+                String sentence = inFromUser.readLine();
 
-            System.out.println("Sending data to " + sendData.length + " bytes to server.");
-            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
+                if (sentence.equals("Quit"))
+                    break;
 
-            clientSocket.send(sendPacket);
+                sendData = sentence.getBytes();
 
-            DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+                System.out.println("Sending data to " + sendData.length + " bytes to server.");
+                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
 
-            System.out.println("Waiting for return packet");
-            clientSocket.setSoTimeout(10000);
+                clientSocket.send(sendPacket);
 
-            try {
-                clientSocket.receive(receivePacket);
-                String modifiedSentence = new String(receivePacket.getData());
+                DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
 
-                InetAddress returnIPAddress = receivePacket.getAddress();
+                System.out.println("Waiting for return packet");
+                clientSocket.setSoTimeout(10000);
 
-                int port = receivePacket.getPort();
+                try {
+                    clientSocket.receive(receivePacket);
+                    String modifiedSentence = new String(receivePacket.getData());
 
-                System.out.println("From server at: " + returnIPAddress + ":" + port);
-                System.out.println("Message: " + modifiedSentence);
-            } catch (SocketTimeoutException ste) {
-                System.out.println("Timeout Occurred: Packet assumed lost");
+                    InetAddress returnIPAddress = receivePacket.getAddress();
+
+                    int port = receivePacket.getPort();
+
+                    System.out.println("From server at: " + returnIPAddress + ":" + port);
+                    System.out.println("Message: " + modifiedSentence);
+                } catch (SocketTimeoutException ste) {
+                    System.out.println("Timeout Occurred: Packet assumed lost");
+                }
+                System.out.print("\n");
             }
 
             clientSocket.close();

@@ -33,6 +33,7 @@ public class UDPserver {
 
                 System.out.println("From: " + IPAddress + ":" + port);
                 System.out.println("Message: " + sentence);
+                System.out.print("\n");
 
                 String capitalizedSentence = sentence.toUpperCase();
 
