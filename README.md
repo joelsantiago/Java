@@ -23,7 +23,7 @@
 
 * #### MenuBook
   A menubook organization applet that allows the user to create new menus, add new recipes, select and add new ingredients to menus, and create a series of steps necessary for each menu item.  Generated output is displayed within the textbox.
- ![MenuBook](./Images/MenuBook.png)
+ ![MenuBook](./Images/Menubook.png)
 
 <a name="SocketProgramming"/></a>
 ## Socket Programming
