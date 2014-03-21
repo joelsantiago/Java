@@ -95,5 +95,6 @@ This is a simple socket program that uses UDP methodology to open a connection b
 
 * #### Tetris
   This was a project from the [Zetcode Tetris Tutorial].  
+  
   ![Tetris](./Images/Tetris.png)
   [Zetcode Tetris Tutorial]:http://zetcode.com/tutorials/javaswingtutorial/thetetrisgame
