@@ -89,11 +89,3 @@ This is a simple socket program that uses UDP methodology to open a connection b
 
 * #### VectorTest
   Like ArrayList, the VectorTest class uses the Person class to insert new objects into the a vector and iterate through and display the data.
-
-<a name="Games"/></a>
-## Games
-
-* #### Tetris
-  This was a project from the [Zetcode Tetris Tutorial].  
-  ![Tetris](./Images/Tetris.png)
-  [Zetcode Tetris Tutorial]:http://zetcode.com/tutorials/javaswingtutorial/thetetrisgame
