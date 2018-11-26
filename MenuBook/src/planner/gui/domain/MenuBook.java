@@ -1,4 +1,4 @@
-package planner.gui.domain;
+package Planner.gui.domain;
 
 import java.util.HashMap;
 

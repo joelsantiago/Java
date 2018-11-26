@@ -1,11 +1,11 @@
-package planner.gui;
+package Planner.gui;
 
 import java.util.*;
 import java.lang.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import planner.gui.domain.*;
+import Planner.gui.domain.*;
 
 /**
  * Created with IntelliJ IDEA

@@ -1,7 +1,7 @@
-package planner;
+package Planner;
 
 import javax.swing.*;
-import planner.gui.*;
+import Planner.gui.*;
 
 /**
  * Created with IntelliJ IDEA
